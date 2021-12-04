@@ -1,0 +1,91 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Baloo Bhaijaan 2', cursive;
+    font-weight: 400;
+    background-color: #f8ceec;
+    background-image: linear-gradient(315deg, #f8ceec 0%, #a88beb 74%);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: #f5f6fa;
+    border-radius: 10px;
+}
+
+.center h1{
+    font-size: 50px;
+    text-align: center;
+    margin: 10px 0;
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid silver;
+}
+
+.center form{
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+form .txt_field{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+.txt_field input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+input[type="text"]::placeholder{
+    color: #abadad;
+    font-size: 16px;
+}
+
+input[type="submit"]{
+    width: 100%;
+    border: 1px solid #f8ceec;
+    background-color: #f8ceec;
+    color: #f5f6fa;
+    font-weight: 700;
+    border-radius: 25px;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
+    transition: .8s;
+}
+
+input[type="submit"]:hover{
+    border: 1px solid #a88beb;
+    background-color: #a88beb;
+    transition: .8s;
+}
+
+.signup_link{
+    text-align: center;
+    margin: 15px 0;
+    font-size: 16px;
+    color: gray;
+}
+
+.signup_link a{
+    color: #f8ceec;
+    text-decoration: none;
+}
+
+.signup_link a:hover{
+    color: #a88beb;
+    text-decoration: underline;
+}

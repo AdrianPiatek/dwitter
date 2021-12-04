@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Dwitter Login Form</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/styleLogin.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styleRegister.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;700&display=swap" rel="stylesheet">
@@ -12,9 +12,15 @@
 </head>
 <body>
     <div class="center">
-        <h1>Login</h1>
-        <form method="POST" class="Login">                <!--podłączyć logowanie do bazy-->
+        <h1>Register</h1>
+        <form method="POST" class="Registration">                <!--podłączyć rejestrację do bazy-->
 
+           <div class="txt_field">
+                <input type="text" required placeholder="Name">
+            </div>
+           <div class="txt_field">
+                <input type="text" required placeholder="Surname">
+            </div>
             <div class="txt_field">
                 <input type="text" required placeholder="Username">
             </div>
@@ -22,10 +28,10 @@
                 <input type="text" required placeholder="Password">
             </div>
 
-            <input type="submit" value="Login">
+            <input type="submit" value="Register">
 
             <div class="signup_link">
-                Not a member? <a href="#">Signup</a>          <!--zamienić # na link do rejestracji-->
+                Have an account? <a href="#">Login</a>          <!--zamienić # na link do logowania-->
             </div>
 
         </form>

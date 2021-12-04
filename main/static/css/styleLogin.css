@@ -37,6 +37,7 @@ form .txt_field{
     border-bottom: 2px solid #adadad;
     margin: 30px 0;
 }
+
 .txt_field input{
     width: 100%;
     padding: 0 5px;
@@ -47,15 +48,11 @@ form .txt_field{
     outline: none;
 }
 
-.txt_field label{
-    position: absolute;
-    top: 50%;
-    left: 5px;
+input[type="text"]::placeholder{
     color: #abadad;
-    transform: translateY(-50%);
     font-size: 16px;
-    pointer-events: none;
 }
+
 input[type="submit"]{
     width: 100%;
     border: 1px solid #f8ceec;
