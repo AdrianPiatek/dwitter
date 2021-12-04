@@ -14,7 +14,9 @@
     <div class="center">
         <h1>Register</h1>
         <form method="POST" class="Registration">                <!--podłączyć rejestrację do bazy-->
-
+            {% csrf_token %}
+            {{ form }}
+            <!--
            <div class="txt_field">
                 <input type="text" required placeholder="Name">
             </div>
@@ -27,13 +29,11 @@
             <div class="txt_field">
                 <input type="text" required placeholder="Password">
             </div>
-
+            -->
             <input type="submit" value="Register">
-
             <div class="signup_link">
-                Have an account? <a href="#">Login</a>          <!--zamienić # na link do logowania-->
+                Have an account? <a href="{% url 'login' %}">Login</a>
             </div>
-
         </form>
     </div>
 
