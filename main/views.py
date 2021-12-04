@@ -4,5 +4,5 @@ from django.http import HttpResponse
 
 
 def home_page(response):
-    return HttpResponse("Test")
+    return render(response, 'Login.html')
 
