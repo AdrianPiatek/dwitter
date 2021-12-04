@@ -1,10 +1,37 @@
-<html>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
+    <title>Dwitter Login Form</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;700&display=swap" rel="stylesheet">
 
 </head>
 <body>
+    <div class="center">
+        <h1>Login</h1>
+        <form method="POST">
 
-<h1>hello world!</h1>
+            <div class="txt_field">
+                <input type="text" required>
+                <label>Username</label>
+            </div>
+            <div class="txt_field">
+                <input type="text" required>
+                <label>Password</label>
+            </div>
+
+            <input type="submit" value="Login">
+
+            <div class="signup_link">
+                Not a member? <a href="#">Signup</a>
+            </div>
+
+        </form>
+    </div>
 
 
 </body>
