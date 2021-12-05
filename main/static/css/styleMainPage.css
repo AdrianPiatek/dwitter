@@ -49,19 +49,79 @@ body{
     width: calc(20%);
 }
 
+/*top-------------------------------middle*/
+
 #middle{
-    margin: 15vh 15vw 12vh 15vw;
+    margin: auto;
+    width: auto;
+    height: auto;
+}
+
+#middle ul{
+    list-style: none;
+    padding-left: 0;
+    overflow-y:scroll;
+}
+
+#middle ul .post{
+    overflow: auto;
+    position: relative;
+    width: 700px;
+    box-sizing: border-box;
+    margin: 15vh auto 12vh auto;
     border-radius: 30px;
     background-color: #f5f6fa;
     height: 73vh;
+    padding: 20px;
 }
 
+#middle ul li .postTitle{
+    border-bottom: 3px solid black;
+    min-height: 70px;
+    height: auto;
+    text-align: justify;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+#middle ul li .postContent{
+    /*border: 1px solid blue;*/
+    min-height: 70px;
+    height: auto;
+    text-align: justify;
+    font-size: 17px;
+    margin-bottom: 25px;
+    border-bottom: 3px solid black;
+}
+
+#middle ul li ul .postComment{
+    /*border: 1px solid green;*/
+    margin: 10px 0;
+    border: 3px black solid;
+    border-radius: 20px;
+    min-height: 50px;
+    height: auto;
+    padding-left: 25px;
+    padding-right: 10px;
+    text-align: justify;
+    font-size: 17px;
+}
+
+#middle ul li ul .postAuthor{
+    /*border: 1px solid purple;*/
+    height: 30px;
+    text-align: justify;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*middle-------------------------------bottom*/
 
 
 #bottom{
     position: fixed;
     bottom: 0;
-    margin: 0 5vh;
+    margin: 0 5vw;
     width: 90vw;
     height: 7vh;
     background-color: black;
