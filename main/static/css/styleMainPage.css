@@ -3,10 +3,10 @@ body{
     padding: 0;
     font-family: 'Baloo Bhaijaan 2', cursive;
     font-weight: 400;
-    background-color: #f8ceec;
-    background-image: linear-gradient(315deg, #f8ceec 0%, #a88beb 74%);
-    height: 100vh;
-    overflow: hidden;
+    background-color: #f6f6f6;
+    background-image: linear-gradient(315deg, #f6f6f6 0%, #e9e9e9 74%);
+    height: 100%;
+    overflow: auto;
 }
 
 #top{
@@ -15,13 +15,14 @@ body{
     margin: 0 5vw;
     width: 90vw;
     height: 10vh;
-    background-color: black;
+    background-color: #82ccdd;
     color: #f5f6fa;
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
     overflow: hidden;
     font-size: 25px;
     font-weight: bold;
+    z-index: 100;
 }
 
 #top .topOption{
@@ -49,29 +50,35 @@ body{
     width: calc(20%);
 }
 
+#top .topOption a{
+    text-decoration: none;
+    color: #f5f6fa;
+}
+
+
+
+
 /*top-------------------------------middle*/
 
 #middle{
-    margin: auto;
+    margin-bottom: 10vh;
     width: auto;
-    height: auto;
+    overflow: auto;
 }
 
 #middle ul{
     list-style: none;
     padding-left: 0;
-    overflow-y:scroll;
 }
 
 #middle ul .post{
-    overflow: auto;
     position: relative;
     width: 700px;
     box-sizing: border-box;
-    margin: 15vh auto 12vh auto;
+    margin: 15vh auto 0 auto;
     border-radius: 30px;
     background-color: #f5f6fa;
-    height: 73vh;
+    height: auto;
     padding: 20px;
 }
 
@@ -124,7 +131,7 @@ body{
     margin: 0 5vw;
     width: 90vw;
     height: 7vh;
-    background-color: black;
+    background-color: #82ccdd;
     color: #f5f6fa;
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
@@ -132,6 +139,7 @@ body{
     overflow: hidden;
     font-size: 25px;
     font-weight: bold;
+    z-index: 100;
 }
 
 #bottom a{

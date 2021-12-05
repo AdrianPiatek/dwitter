@@ -4,7 +4,7 @@ body{
     font-family: 'Baloo Bhaijaan 2', cursive;
     font-weight: 400;
     background-color: #f8ceec;
-    background-image: linear-gradient(315deg, #f8ceec 0%, #a88beb 74%);
+    background-image: linear-gradient(315deg, #82ccdd 0%, #60a3bc 74%);
     height: 100vh;
     overflow: hidden;
 }
@@ -81,8 +81,8 @@ input[type="text"]::placeholder{
 
 input[type="submit"]{
     width: 100%;
-    border: 1px solid #f8ceec;
-    background-color: #f8ceec;
+    border: 1px solid #60a3bc;
+    background-color: #60a3bc;
     color: #f5f6fa;
     font-weight: 700;
     border-radius: 25px;
@@ -94,8 +94,8 @@ input[type="submit"]{
 }
 
 input[type="submit"]:hover{
-    border: 1px solid #a88beb;
-    background-color: #a88beb;
+    border: 1px solid #82ccdd;
+    background-color: #82ccdd;
     transition: .8s;
 }
 
@@ -107,11 +107,11 @@ input[type="submit"]:hover{
 }
 
 .signup_link a{
-    color: #f8ceec;
+    color: #60a3bc;
     text-decoration: none;
 }
 
 .signup_link a:hover{
-    color: #a88beb;
+    color: #82ccdd;
     text-decoration: underline;
 }
