@@ -4,31 +4,36 @@
 <head>
     <meta charset="utf-8">
     <title>Dwitter Login Form</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/styleRegister.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styleLogin.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;700&display=swap" rel="stylesheet">
 
 </head>
 <body>
-    <div class="center">
-        <h1>Register</h1>
-        <form method="POST" class="Registration">                <!--podłączyć rejestrację do bazy-->
-            {% csrf_token %}
-            <div class="txt_field">
-                {{ form.username }}
-            </div>
-            <div class="txt_field">
-                {{ form.password1 }}
-            </div>
-            <div class="txt_field">
-                {{ form.password2 }}
-            </div>
-            <input type="submit" value="Register">
-            <div class="signup_link">
-                Have an account? <a href="{% url 'login' %}">Login</a>
-            </div>
-        </form>
+    <div id="container">
+        <div id="logo">
+            <div id="text">Dwitter</div>
+        </div>
+        <div id="center">
+            <h1>Register</h1>
+            <form method="POST" class="Registration">                <!--podłączyć rejestrację do bazy-->
+                {% csrf_token %}
+                <div class="txt_field">
+                    {{ form.username }}
+                </div>
+                <div class="txt_field">
+                    {{ form.password1 }}
+                </div>
+                <div class="txt_field">
+                    {{ form.password2 }}
+                </div>
+                <input type="submit" value="Register">
+                <div class="signup_link">
+                    Have an account? <a href="{% url 'login' %}">Login</a>
+                </div>
+            </form>
+        </div>
     </div>
 
 
