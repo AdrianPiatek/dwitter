@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Dwitter Login Form</title>
+    <title>Dwitter</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/styleMainPage.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,9 +11,37 @@
 
 </head>
 <body>
+    <div id="container">
+        <div id="top">
 
-    <h1>Done</h1>
-    <a href="/logout">logout</a>
+            <div class="topOption">
+                Home
+            </div>
+            <div class="topOption">
+                Settings
+            </div>
+            <div class="topOption">
+                Profile
+            </div>
+            <div class="topOption">
+                Help
+            </div>
+            <div id="topProfile">
+               Username            {# replace username with the one from database#}
+            </div>
 
+            <div style="clear: both;"></div>
+        </div>
+        <div id="middle">
+
+
+
+        </div>
+        <div id="bottom">
+            <div id="logout">
+                <a href="/logout">logout</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

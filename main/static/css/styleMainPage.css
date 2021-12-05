@@ -8,3 +8,86 @@ body{
     height: 100vh;
     overflow: hidden;
 }
+
+#top{
+    position: fixed;
+    top: 0;
+    margin: 0 5vw;
+    width: 90vw;
+    height: 10vh;
+    background-color: black;
+    color: #f5f6fa;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    overflow: hidden;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#top .topOption{
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    float: left;
+    padding: 25px 0;
+    height: 100%;
+    width: calc(20%);
+}
+
+#top .topOption:hover{
+    background-color: #404040;
+    cursor: pointer;
+}
+
+#top #topProfile{
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    float: left;
+    padding: 25px 0;
+    height: 100%;
+    width: calc(20%);
+}
+
+#middle{
+    margin: 15vh 15vw 12vh 15vw;
+    border-radius: 30px;
+    background-color: #f5f6fa;
+    height: 73vh;
+}
+
+
+
+#bottom{
+    position: fixed;
+    bottom: 0;
+    margin: 0 5vh;
+    width: 90vw;
+    height: 7vh;
+    background-color: black;
+    color: #f5f6fa;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    text-align: center;
+    overflow: hidden;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#bottom a{
+    color: #f5f6fa;
+    text-decoration: none;
+}
+#bottom:hover{
+    background-color: #404040;
+    cursor: pointer;
+}
+
+#bottom:visited{
+    color: #f5f6fa;
+    text-decoration: none;
+}
+
+#bottom #logout{
+    margin: 12px;
+}
