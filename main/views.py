@@ -33,7 +33,3 @@ def add_post(response):
 
 def add_friend(response):
     return render(response, 'main/addFriend.html')
-
-
-def add_friend(response):
-    return render(response, 'main/addFriend.html')
