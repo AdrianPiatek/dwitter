@@ -29,3 +29,7 @@ def register(response):
 
 def add_post(response):
     return render(response, 'main/addPost.html')
+
+
+def add_friend(response):
+    return render(response, 'main/addFriend.html')
