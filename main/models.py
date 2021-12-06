@@ -3,16 +3,20 @@ from django.contrib.auth.models import User
 
 
 def get_path(instance, filename):
-    pass
-    return '{0}/{1}'.format(instance)
+    return '{0}/{1}'.format(instance.author.username, filename)
+
 
 # Create your models here.
 class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     add_date = models.DateTimeField(default='')
     title = models.CharField(max_length=80, default='')
-    #image = models.ImageField(upload_to='file')
+    image = models.ImageField(upload_to=get_path, blank=True)
     text = models.TextField(blank=True)
+
+    def image_url(self):
+        if self.image and hasattr(self.image, 'url'):
+            return self.image.url
 
 
 class Comment(models.Model):
