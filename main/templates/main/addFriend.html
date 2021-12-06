@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Dwitter Login Form</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/styleAddPost.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styleAddFriend.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;700&display=swap" rel="stylesheet">
@@ -22,14 +22,13 @@
         <div id="center">
             <form method="POST" class="Login">
                 {% csrf_token %}
-                <input type="text" id="title" placeholder="Title"> {#post title#}
-                <textarea id="content" placeholder="Content"> {#post content#}
+                <input type="text" id="title" placeholder="Friend's nickname"> {#friend's nick#}
 
-                </textarea>
+                <input type="submit" value="Add"> {#adding a friend#}
 
-                <input type="submit" value="Post"> {#posting a post#}
-
-                <input type="submit" value="Back"> {#going back to main page#}
+                <a href="/home">
+                    <input type="submit" value="Back"> {#going back to main page#}
+                </a>
 
             </form>
         </div>

@@ -14,18 +14,24 @@
 
         <div id="top">
 
-            <div class="topOption">
-                <a href="/home">Dwitter</a>
-            </div>
+            <a href="/home">
+                <div class="topOption">
+                    Dwitter
+                </div>
+            </a>
             <div class="topOption">
                 Settings
             </div>
-            <div class="topOption">
-                <a href="/add-post">Add Post</a>
-            </div>
-            <div class="topProfile">
-                kakao
-            </div>
+            <a href="/add-post">
+                <div class="topOption">
+                    Add Post
+                </div>
+            </a>
+            <a href="/add-friend">
+                <div class="topOption">
+                    Add Friend
+                </div>
+            </a>
             <div class="topProfile">
                {{ user.get_username }}        {# replace username with the one from database#}
             </div>
@@ -62,9 +68,11 @@
 
 
         <div id="bottom">
-            <div id="logout">
-                <a href="/logout">logout</a>
-            </div>
+            <a href="/logout">
+                <div id="logout">
+                    logout
+                </div>
+            </a>
         </div>
 
     </div>
