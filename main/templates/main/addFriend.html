@@ -22,11 +22,13 @@
         <div id="center">
             <form method="POST" class="Login">
                 {% csrf_token %}
-                <input type="text" id="title" placeholder="Friend's nickname"> {#friend nick#}
+                <input type="text" id="title" placeholder="Friend's nickname"> {#friend's nick#}
 
                 <input type="submit" value="Add"> {#adding a friend#}
 
-                <input type="submit" value="Back"> {#going back to main page#}
+                <a href="/home">
+                    <input type="submit" value="Back"> {#going back to main page#}
+                </a>
 
             </form>
         </div>
