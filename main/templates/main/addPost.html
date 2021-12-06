@@ -17,20 +17,16 @@
             <div id="text">Dwitter</div>
         </div>
         <div id="center">
-            <h1>Login</h1>
             <form method="POST" class="Login">
                 {% csrf_token %}
                 <div class="txt_field">
-                    {{ form.username }}
+
                 </div>
                 <div class="txt_field">
                     {{ form.password }}
                 </div>
                 {{ form.errors }}
-                <input type="submit" value="Login">
-                <div class="signup_link">
-                    Not a member? <a href="{% url 'register' %}">Signup</a>
-                </div>
+                <input type="submit" value="Post">
             </form>
         </div>
     </div>
