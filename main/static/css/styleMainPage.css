@@ -27,12 +27,10 @@ body{
 
 #top .topOption{
     text-align: center;
-    display: inline-block;
-    vertical-align: middle;
     float: left;
     padding: 25px 0;
     height: 100%;
-    width: calc(20%);
+    width: 20%;
 }
 
 #top .topOption:hover{
@@ -40,23 +38,18 @@ body{
     cursor: pointer;
 }
 
-#top #topProfile{
+#top .topProfile{
     text-align: center;
-    display: inline-block;
-    vertical-align: middle;
     float: left;
     padding: 25px 0;
     height: 100%;
-    width: calc(20%);
+    width: 20%;
 }
 
 #top .topOption a{
     text-decoration: none;
     color: #f5f6fa;
 }
-
-
-
 
 /*top-------------------------------middle*/
 

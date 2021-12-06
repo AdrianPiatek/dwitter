@@ -25,3 +25,7 @@ def register(response):
     else:
         form = CustomUserCreatingForm()
     return render(response, 'main/Register.html', {'form': form})
+
+
+def add_post(response):
+    return render(response, 'main/addPost.html')
