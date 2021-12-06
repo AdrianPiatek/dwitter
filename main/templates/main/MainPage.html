@@ -27,7 +27,7 @@
                 Help
             </div>
             <div id="topProfile">
-               Username            {# replace username with the one from database#}
+               {{ user.get_username }}        {# replace username with the one from database#}
             </div>
 
             <div style="clear: both;"></div>
@@ -36,62 +36,27 @@
 
         <div id="middle">
             <ul>
+
+                {% for post in posts %}
                 <li class="post">   {# i think we need to use this class as an object for making posts #}
                     <div class="postTitle">
-                        Lorem ipsum
+                        {{ post.title }}
                     </div>
                     <div class="postContent">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at scelerisque tortor, sit amet facilisis justo. In in efficitur magna. Sed erat arcu, pharetra quis laoreet nec, pellentesque at neque. Integer porta, est et gravida venenatis, diam lorem malesuada dolor, feugiat tempor lectus magna vel sem. Maecenas consequat mi lorem, nec mattis orci consequat id. Sed pretium hendrerit vestibulum. Suspendisse a eleifend quam, at tempus nunc. Etiam id blandit ante, sit amet sollicitudin augue. Cras ut est ac velit ornare sollicitudin sed ut nulla. Etiam massa elit, tempus quis lectus quis, faucibus molestie felis. Sed rhoncus justo ipsum, a mollis tellus lacinia id. Donec laoreet iaculis arcu, eget euismod diam blandit eu. Aliquam viverra lobortis erat, et elementum erat consectetur tincidunt. Nullam aliquet sapien ac risus porttitor tempus. Curabitur congue pulvinar facilisis. Nullam quis luctus arcu.
+                        {{ post.text }}
                     </div>
                     <div class="postAddComment"> Add comment</div>
                     <ul>
+                        {% for comment in post.comment_set.all %}
                         <li class="postComment">
-                            <div class="postAuthor">Author</div>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque velit diam, dignissim sit amet vehicula in, malesuada sit amet magna. Etiam ex tellus, feugiat a sem non, varius pulvinar nisl. Vivamus eros diam, vulputate nec orci eu, aliquet varius sem. Phasellus efficitur turpis a
+                            <div class="postAuthor">{{ comment.author }}</div>
+                            {{ comment.text }}
                         </li>   {# another class for comments?? idk xD #}
-                        <li class="postComment">
-                            <div class="postAuthor">Author</div>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque velit diam, dignissim sit amet vehicula in, malesuada sit amet magna. Etiam ex tellus, feugiat a sem non, varius pulvinar nisl. Vivamus eros diam, vulputate nec orci eu, aliquet varius sem. Phasellus efficitur turpis a
-                        </li>
-                        <li class="postComment">
-                            <div class="postAuthor">Author</div>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque velit diam, dignissim sit amet vehicula in, malesuada sit amet magna. Etiam ex tellus, feugiat a sem non, varius pulvinar nisl. Vivamus eros diam, vulputate nec orci eu, aliquet varius sem. Phasellus efficitur turpis a
-                        </li>
-                        <li class="postComment">
-                            <div class="postAuthor">Author</div>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque velit diam, dignissim sit amet vehicula in, malesuada sit amet magna. Etiam ex tellus, feugiat a sem non, varius pulvinar nisl. Vivamus eros diam, vulputate nec orci eu, aliquet varius sem. Phasellus efficitur turpis a
-                        </li>
+                        {% endfor %}
                     </ul>
                 </li>
+                {% endfor %}
 
-
-                <li class="post">   {# i think we need to use this class as an object for making posts #}
-                    <div class="postTitle">
-                        Lorem ipsum
-                    </div>
-                    <div class="postContent">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at scelerisque tortor, sit amet facilisis justo. In in efficitur magna. Sed erat arcu, pharetra quis laoreet nec, pellentesque at neque. Integer porta, est et gravida venenatis, diam lorem malesuada dolor, feugiat tempor lectus magna vel sem. Maecenas consequat mi lorem, nec mattis orci consequat id. Sed pretium hendrerit vestibulum. Suspendisse a eleifend quam, at tempus nunc. Etiam id blandit ante, sit amet sollicitudin augue. Cras ut est ac velit ornare sollicitudin sed ut nulla. Etiam massa elit, tempus quis lectus quis, faucibus molestie felis. Sed rhoncus justo ipsum, a mollis tellus lacinia id. Donec laoreet iaculis arcu, eget euismod diam blandit eu. Aliquam viverra lobortis erat, et elementum erat consectetur tincidunt. Nullam aliquet sapien ac risus porttitor tempus. Curabitur congue pulvinar facilisis. Nullam quis luctus arcu.
-                    </div>
-
-                    <ul>
-                        <li class="postComment">
-                            <div class="postAuthor">Author</div>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque velit diam, dignissim sit amet vehicula in, malesuada sit amet magna. Etiam ex tellus, feugiat a sem non, varius pulvinar nisl. Vivamus eros diam, vulputate nec orci eu, aliquet varius sem. Phasellus efficitur turpis a
-                        </li>   {# another class for comments?? idk xD #}
-                        <li class="postComment">
-                            <div class="postAuthor">Author</div>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque velit diam, dignissim sit amet vehicula in, malesuada sit amet magna. Etiam ex tellus, feugiat a sem non, varius pulvinar nisl. Vivamus eros diam, vulputate nec orci eu, aliquet varius sem. Phasellus efficitur turpis a
-                        </li>
-                        <li class="postComment">
-                            <div class="postAuthor">Author</div>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque velit diam, dignissim sit amet vehicula in, malesuada sit amet magna. Etiam ex tellus, feugiat a sem non, varius pulvinar nisl. Vivamus eros diam, vulputate nec orci eu, aliquet varius sem. Phasellus efficitur turpis a
-                        </li>
-                        <li class="postComment">
-                            <div class="postAuthor">Author</div>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque velit diam, dignissim sit amet vehicula in, malesuada sit amet magna. Etiam ex tellus, feugiat a sem non, varius pulvinar nisl. Vivamus eros diam, vulputate nec orci eu, aliquet varius sem. Phasellus efficitur turpis a
-                        </li>
-                    </ul>
-                </li>
             </ul>
         </div>
 

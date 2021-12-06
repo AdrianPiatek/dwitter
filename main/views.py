@@ -1,13 +1,18 @@
 from django.shortcuts import render, redirect
 from .forms import CustomUserCreatingForm
+from django.contrib.auth.models import User
+from .models import Post, Comment
 
 
 def login(response):
-    return redirect('/login')
+    return redirect('login')
 
 
 def home(response):
-    return render(response, 'main/MainPage.html')
+    if not response.user.is_authenticated:
+        return redirect('login')
+    posts = Post.objects.all()
+    return render(response, 'main/MainPage.html', {'posts': posts})
 
 
 def register(response):
