@@ -54,10 +54,16 @@ body{
 
 /*top-------------------------------middle*/
 
+img{
+    max-width: 100%;
+}
+
 #middle{
     margin-bottom: 10vh;
-    width: auto;
+    width: 700px;
     overflow: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #middle ul{
