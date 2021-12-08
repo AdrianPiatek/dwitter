@@ -26,7 +26,9 @@
                 <div class="txt_field">
                     {{ form.password }}
                 </div>
-                {{ form.errors }}
+                {% for error in form.non_field_errors %}
+                    {{ error }}
+                {% endfor %}
                 <input type="submit" value="Login">
                 <div class="signup_link">
                     Not a member? <a href="{% url 'register' %}">Signup</a>          <!--zamienić # na link do rejestracji-->

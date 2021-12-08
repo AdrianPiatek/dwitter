@@ -25,6 +25,9 @@
                 {{ form.title }}
                 {{ form.text }}
                 {{ form.image }}
+                {% for error in form.non_field_errors %}
+                    {{ error }}
+                {% endfor %}
                 <input type="submit" value="Post"> {#posting a post#}
 
             </form>
