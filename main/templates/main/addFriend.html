@@ -24,6 +24,10 @@
             <form method="POST" class="Login">
                 {% csrf_token %}
                 {{ form.whom }}
+                {{ form.whom.errors }}
+                {% for error in form.non_field_errors %}
+                    {{ error }}
+                {% endfor %}
                 <input type="submit" value="Add"> {#adding a friend#}
             </form>
             <a href="/home">

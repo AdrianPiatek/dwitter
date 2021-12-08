@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.forms.widgets import PasswordInput, TextInput
 from .models import Post, Comment, Friend
+from django.contrib.auth.models import User
 
 
 class CustomAuthForm(AuthenticationForm):
@@ -34,3 +35,8 @@ class AddFriendForm(forms.Form):
 
     class Meta:
         fields = ['whom']
+
+    def clean(self):
+        data = self.cleaned_data.get('whom')
+        if not User.objects.filter(username=data).exists():
+            self.add_error('whom', "User dose not exist")

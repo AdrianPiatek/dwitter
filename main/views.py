@@ -50,12 +50,13 @@ def add_friend(response):
             user2 = response.user
             try:
                 Friend.objects.get(whom=user2, who=user1)
-                return redirect('add-friend-er')
             except Friend.DoesNotExist:
-                friend_rel1 = Friend(who=user1, whom=user2)
-                friend_rel2 = Friend(who=user2, whom=user1)
-                friend_rel1.save()
-                friend_rel2.save()
-                return redirect('home')
-    form = AddFriendForm
+                if user2 == user1:
+                    form.add_error('whom', "You is you")
+                else:
+                    Friend(who=user1, whom=user2).save()
+                    Friend(who=user2, whom=user1).save()
+                    return redirect('home')
+    else:
+        form = AddFriendForm()
     return render(response, 'main/addFriend.html', {'form': form})
