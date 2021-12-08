@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Dwitter Login Form</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styleAddPost.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <div id="container">
+
+        <div id="logo">
+            <div id="text">Dwitter</div>
+        </div>
+
+
+        <div id="center">
+            <form method="POST" enctype='multipart/form-data' class="Login">
+                {% csrf_token %}
+                <textarea cols="30" rows="10"></textarea>
+                {% for error in form.non_field_errors %}
+                    {{ error }}
+                {% endfor %}
+                <input type="submit" value="Add comment"> {#Adding a comment#}
+
+            </form>
+             <a href="/home">
+                    <input type="submit" value="Back" id="backButton"> {#going back to main page#}
+             </a>
+        </div>
+
+
+    </div>
+
+</body>
+</html>

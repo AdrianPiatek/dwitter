@@ -59,3 +59,7 @@ def add_friend(response):
                 return redirect('home')
     form = AddFriendForm
     return render(response, 'main/addFriend.html', {'form': form})
+
+
+def add_comment(response):
+    return render(response, 'main/addComment.html')

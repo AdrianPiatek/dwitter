@@ -92,7 +92,6 @@ img{
 }
 
 #middle ul li .postContent{
-    /*border: 1px solid blue;*/
     min-height: 70px;
     height: auto;
     text-align: justify;
@@ -102,7 +101,6 @@ img{
 }
 
 #middle ul li ul .postComment{
-    /*border: 1px solid green;*/
     margin: 10px 0;
     border: 3px black solid;
     border-radius: 20px;
@@ -115,11 +113,23 @@ img{
 }
 
 #middle ul li ul .postAuthor{
-    /*border: 1px solid purple;*/
     height: 30px;
     text-align: justify;
     font-size: 20px;
     font-weight: bold;
+}
+
+#middle ul li a{
+    text-decoration: none;
+    color: #f5f6fa;
+}
+
+#middle ul li .postAddComment{
+    font-size: 25px;
+    background-color: #82ccdd;
+    border-radius: 20px;
+    overflow: hidden;
+    text-align: center;
 }
 
 /*middle-------------------------------bottom*/

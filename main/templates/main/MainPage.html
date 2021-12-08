@@ -52,7 +52,9 @@
                         <img src="{{ post.image_url }}" alt="">
                         {{ post.text }}
                     </div>
-                    <div class="postAddComment"> Add comment</div>
+                    <a href="/add-comment">
+                        <div class="postAddComment">Add comment</div>
+                    </a>
                     <ul>
                         {% for comment in post.comment_set.all %}
                         <li class="postComment">
