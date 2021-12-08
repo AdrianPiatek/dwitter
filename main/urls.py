@@ -8,5 +8,5 @@ urlpatterns = [
     path('add-post/', views.add_post, name='add-post'),
     path('add-friend/', views.add_friend, name='add-friend'),
     path('add-comment/<int:post_id>/', views.add_comment, name='add-comment'),
-    path('show-friends', views.show_friends, name='show-friends'),
+    path('show-friends/', views.show_friends, name='show-friends'),
 ]

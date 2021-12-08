@@ -28,6 +28,8 @@ def register(response):
 
 
 def add_post(response):
+    if not response.user.is_authenticated:
+        return redirect('login')
     if response.method == 'POST':
         form = PostForm(response.POST, response.FILES)
         if form.is_valid():
@@ -42,6 +44,8 @@ def add_post(response):
 
 
 def add_friend(response):
+    if not response.user.is_authenticated:
+        return redirect('login')
     if response.method == 'POST':
         form = AddFriendForm(response.POST)
         if form.is_valid():
@@ -62,5 +66,26 @@ def add_friend(response):
     return render(response, 'main/addFriend.html', {'form': form})
 
 
-def add_comment(response):
-    return render(response, 'main/addComment.html')
+def add_comment(response, post_id):
+    if not response.user.is_authenticated:
+        return redirect('login')
+    if response.method == 'POST':
+        form = AddCommentForm(response.POST)
+        if form.is_valid():
+            post = Post.objects.filter(pk=post_id)
+            if post.exists():
+                comment = form.save(commit=False)
+                comment.author = response.user
+                comment.add_date = datetime.now()
+                comment.post = post.get(pk=post_id)
+                comment.save()
+                return redirect('home')
+            else:
+                form.add_error('text', "Post doesn't exist")
+    else:
+        form = AddCommentForm()
+    return render(response, 'main/addComment.html', {'form': form})
+
+
+def show_friends(response):
+    return render(response, 'main/showFriends.html')
