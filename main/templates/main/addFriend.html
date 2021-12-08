@@ -20,17 +20,15 @@
 
 
         <div id="center">
+            <p>{{ msg }}</p>
             <form method="POST" class="Login">
                 {% csrf_token %}
-                <input type="text" id="title" placeholder="Friend's nickname"> {#friend's nick#}
-
+                {{ form.whom }}
                 <input type="submit" value="Add"> {#adding a friend#}
-
-                <a href="/home">
-                    <input type="submit" value="Back"> {#going back to main page#}
-                </a>
-
             </form>
+            <a href="/home">
+                    <input type="submit" value="Back"> {#going back to main page#}
+            </a>
         </div>
 
 

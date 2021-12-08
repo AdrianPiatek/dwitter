@@ -1,3 +1,5 @@
+import os.path
+
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -9,7 +11,7 @@ def get_path(instance, filename):
 # Create your models here.
 class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    add_date = models.DateTimeField(default='')
+    add_date = models.DateTimeField(default='2000-01-01 00:00')
     title = models.CharField(max_length=80, default='')
     image = models.ImageField(upload_to=get_path, blank=True)
     text = models.TextField(blank=True)

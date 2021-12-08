@@ -20,20 +20,17 @@
 
 
         <div id="center">
-            <form method="POST" class="Login">
+            <form method="POST" enctype='multipart/form-data' class="Login">
                 {% csrf_token %}
-                <input type="text" id="title" placeholder="Title"> {#post title#}
-                <textarea id="content" placeholder="Content"> {#post content#}
-
-                </textarea>
-
+                {{ form.title }}
+                {{ form.text }}
+                {{ form.image }}
                 <input type="submit" value="Post"> {#posting a post#}
 
-                <a href="/home">
-                    <input type="submit" value="Back"> {#going back to main page#}
-                </a>
-
             </form>
+             <a href="/home">
+                    <input type="submit" value="Back"> {#going back to main page#}
+             </a>
         </div>
 
 
