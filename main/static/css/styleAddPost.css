@@ -69,7 +69,7 @@ input[type=text], textarea{
 
 textarea{
     resize: none;
-    min-height: 300px;
+    min-height: 200px;
     margin-bottom: 15px;
 }
 
@@ -93,3 +93,10 @@ input[type="submit"]:hover{
     background-color: #82ccdd;
     transition: .8s;
 }
+
+#backButton{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+

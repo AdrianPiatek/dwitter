@@ -88,3 +88,9 @@ input[type="submit"]:hover{
     background-color: #82ccdd;
     transition: .8s;
 }
+
+#backButton{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
