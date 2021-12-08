@@ -88,4 +88,7 @@ def add_comment(response, post_id):
 
 
 def show_friends(response):
-    return render(response, 'main/showFriends.html')
+    if not response.user.is_authenticated:
+        return redirect('login')
+    friends = Friend.objects.filter(who=response.user)
+    return render(response, 'main/showFriends.html', {'friends': friends})

@@ -19,38 +19,9 @@
 
             <div id="userList">
                 <ul>
-                    <li> User_1 </li>
-                    <li> User_1 </li>
-                    <li> User_1 </li>
-                    <li> User_1 </li>
-                    <li> User_1 </li>
-                    <li> User_1 </li>
-                    <li> User_1 </li>
-                    <li> User_1 </li>
-                    <li> User_1 </li>
-                    <li> User_1 </li>
-                    <li> User_1 </li>
-                    <li> User_1 </li>
-                    <li> User_1 </li>
-                    <li> User_1 </li>
-                    <li> User_1 </li>
-                    <li> User_1 </li>
-                    <li> User_1 </li>
-                    <li> User_1 </li>
-                    <li> User_1 </li>
-                    <li> User_1 </li>
-                    <li> User_1 </li>
-                    <li> User_1 </li>
-                    <li> User_1 </li>
-                    <li> User_1 </li>
-                    <li> User_1 </li>
-                    <li> User_1 </li>
-                    <li> User_1 </li>
-                    <li> User_1 </li>
-                    <li> User_1 </li>
-                    <li> User_1 </li>
-                    <li> User_1 </li>
-                    <li> User_1 </li>
+                    {% for friend in friends %}
+                        <li>{{ friend.whom.username }}</li>
+                    {% endfor %}
                 </ul>
             </div>
 
