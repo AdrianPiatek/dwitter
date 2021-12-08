@@ -22,7 +22,8 @@
         <div id="center">
             <form method="POST" enctype='multipart/form-data' class="Login">
                 {% csrf_token %}
-                <textarea cols="30" rows="10"></textarea>
+                {{ form.text }}
+                {{ form.text.errors }}
                 {% for error in form.non_field_errors %}
                     {{ error }}
                 {% endfor %}

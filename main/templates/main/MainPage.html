@@ -56,7 +56,7 @@
                         <img src="{{ post.image_url }}" alt="">
                         {{ post.text }}
                     </div>
-                    <a href="/add-comment">
+                    <a href="{% url 'add-comment' post.id %}">
                         <div class="postAddComment">Add comment</div>
                     </a>
                     <ul>

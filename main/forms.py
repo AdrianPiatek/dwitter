@@ -40,3 +40,11 @@ class AddFriendForm(forms.Form):
         data = self.cleaned_data.get('whom')
         if not User.objects.filter(username=data).exists():
             self.add_error('whom', "User dose not exist")
+
+
+class AddCommentForm(forms.ModelForm):
+    text = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'comment'}))
+
+    class Meta:
+        model = Comment
+        fields = ['text']
