@@ -64,3 +64,7 @@ def add_friend(response):
 
 def add_comment(response):
     return render(response, 'main/addComment.html')
+
+
+def show_friends(response):
+    return render(response, 'main/showFriends.html')

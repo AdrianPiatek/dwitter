@@ -1,0 +1,72 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Baloo Bhaijaan 2', cursive;
+    font-weight: 400;
+    background-color: #f8ceec;
+    background-image: linear-gradient(315deg, #82ccdd 0%, #60a3bc 74%);
+    height: 100vh;
+    overflow: hidden;
+
+}
+
+#container{
+    margin: 60px auto 0 auto;
+    width: 450px;
+}
+
+#center{
+    position: relative;
+    width: 400px;
+    background: #f5f6fa;
+    border-radius: 20px;
+    vertical-align: center;
+    top: 5%;
+    left: 5%;
+    max-height: 1500px;
+}
+
+#center #userList ul{
+    list-style: none;
+    max-height: 500px;
+    overflow: auto;
+    padding: 0 10px 0 10px;
+}
+
+#center #userList ul li{
+    padding: 10px;
+    background-color: #f5f6fa;
+    margin: 5px 0 5px 0;
+    border-radius: 20px;
+    border: 3px solid #60a3bc;
+    text-align: center;
+    font-size: 20px;
+}
+
+input[type="submit"]{
+    width: 100%;
+    border: 1px solid #60a3bc;
+    background-color: #60a3bc;
+    color: #f5f6fa;
+    font-weight: 700;
+    border-radius: 25px;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
+    transition: .8s;
+    margin-bottom: 15px;
+}
+
+input[type="submit"]:hover{
+    border: 1px solid #82ccdd;
+    background-color: #82ccdd;
+    transition: .8s;
+}
+
+#backButton{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
