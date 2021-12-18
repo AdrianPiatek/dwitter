@@ -43,6 +43,12 @@ body{
     font-size: 20px;
 }
 
+image{
+    max-width: 80px;
+    max-height: 100%;
+    horiz-align: left;
+}
+
 input[type="submit"]{
     width: 100%;
     border: 1px solid #60a3bc;
