@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
+from django.utils import timezone
 from .forms import *
 from django.contrib.auth.models import User
 from .models import Post, Comment, Friend
-from datetime import datetime
 from . import logger
 
 
@@ -38,7 +38,7 @@ def add_post(response):
         if form.is_valid():
             post = form.save(commit=False)
             post.author = response.user
-            post.add_date = datetime.now()
+            post.add_date = timezone.now()
             post.save()
             logger.write_log(response.user.username, 'added post')
             return redirect('home')
@@ -84,7 +84,7 @@ def add_comment(response, post_id):
             if post.exists():
                 comment = form.save(commit=False)
                 comment.author = response.user
-                comment.add_date = datetime.now()
+                comment.add_date = timezone.now()
                 comment.post = post.get(pk=post_id)
                 comment.save()
                 logger.write_log(response.user.username, f'added comment to post id={post_id}')
