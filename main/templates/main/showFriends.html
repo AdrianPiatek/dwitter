@@ -20,7 +20,7 @@
             <div id="userList">
                 <ul>
                     {% for friend in friends %}
-                        <li> <img src="#"> {{ friend.whom.username }}</li>
+                        <li> <img src="{% static 'avatar.png' %}" width="40" height="40"> {{ friend.whom.username }}</li>
                     {% endfor %}
                 </ul>
             </div>
