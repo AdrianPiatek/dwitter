@@ -34,20 +34,28 @@ body{
 }
 
 #center #userList ul li{
-    padding: 10px;
+    max-width: 380px;
+    max-height: 90px;
+    overflow: hidden;
     background-color: #f5f6fa;
     margin: 5px 0 5px 0;
     border-radius: 20px;
     border: 3px solid #60a3bc;
     text-align: center;
+    vertical-align: center;
     font-size: 20px;
 }
 
-image{
-    max-width: 80px;
+#center #userList ul li img{
+    max-width: 90px;
     max-height: 100%;
-    horiz-align: left;
+    float: left;
 }
+
+#center #userList ul li .text{
+    margin-top: 30px;
+}
+
 
 input[type="submit"]{
     width: 100%;
