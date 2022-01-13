@@ -17,7 +17,7 @@
         </div>
         <div id="center">
             <h1>Register</h1>
-            <form method="POST" class="Registration">                <!--podłączyć rejestrację do bazy-->
+            <form method="POST" class="Registration">
                 {% csrf_token %}
                 <div class="txt_field">
                     {{ form.username }}
@@ -31,6 +31,9 @@
                     {{ form.password2 }}
                 </div>
                     {{ form.password2.errors }}
+                <div class="txt_field">
+                                                                    {# Dodać email do rejestracji #}
+                </div>
                 {% for error in form.non_field_errors %}
                     {{ error }}
                 {% endfor %}
