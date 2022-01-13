@@ -1,3 +1,4 @@
+from django.db.models import Q
 from django.shortcuts import render, redirect
 from django.utils import timezone
 from .forms import *
@@ -13,7 +14,8 @@ def login(response):
 def home(response):
     if not response.user.is_authenticated:
         return redirect('login')
-    posts = Post.objects.all()
+    author = User.objects.all().filter(Q(friend__who=response.user) | Q(username=response.user.username))
+    posts = Post.objects.all().filter(author__in=author).order_by("-add_date")
     logger.write_log(response.user.username, 'main page visited')
     return render(response, 'main/MainPage.html', {'posts': posts})
 
@@ -103,3 +105,7 @@ def show_friends(response):
     friends = Friend.objects.filter(who=response.user)
     logger.write_log(response.user.username, 'show friends page visited')
     return render(response, 'main/showFriends.html', {'friends': friends})
+
+
+def forgot_password(response):
+    return render(response, 'main/forgotPassword.html')
