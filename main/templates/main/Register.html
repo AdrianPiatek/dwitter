@@ -32,7 +32,7 @@
                 </div>
                     {{ form.password2.errors }}
                 <div class="txt_field">
-                                                                    {# Dodać email do rejestracji #}
+                    {{ form.email }}                                          {# Dodać email do rejestracji #}
                 </div>
                 {% for error in form.non_field_errors %}
                     {{ error }}

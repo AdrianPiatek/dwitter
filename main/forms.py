@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
-from django.forms.widgets import PasswordInput, TextInput
+from django.forms.widgets import PasswordInput, TextInput, EmailInput
 from .models import Post, Comment, Friend
 from django.contrib.auth.models import User
 
@@ -14,6 +14,7 @@ class CustomUserCreatingForm(UserCreationForm):
     username = forms.CharField(widget=TextInput(attrs={'class': 'validate', 'placeholder': 'username'}))
     password1 = forms.CharField(widget=PasswordInput(attrs={'class': 'validate', 'placeholder': 'password'}))
     password2 = forms.CharField(widget=PasswordInput(attrs={'class': 'validate', 'placeholder': 'confirm password'}))
+    email = forms.CharField(widget=EmailInput(attrs={'class': 'validate', 'placeholder': 'email'}))
 
 
 class PostForm(forms.ModelForm):
