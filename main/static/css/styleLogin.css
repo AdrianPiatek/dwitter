@@ -115,3 +115,7 @@ input[type="submit"]:hover{
     color: #82ccdd;
     text-decoration: underline;
 }
+
+#buttonChange {
+    margin-bottom: 10px;
+}
