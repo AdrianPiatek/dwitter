@@ -1,9 +1,15 @@
+import random
+import string
+
 from django.db.models import Q
 from django.shortcuts import render, redirect
 from django.utils import timezone
 from .forms import *
+from django.db.models import Q
 from django.contrib.auth.models import User
-from .models import Post, Comment, Friend
+from django.contrib.auth.hashers import make_password
+from .models import *
+from django.core.mail import send_mail
 from . import logger
 
 
@@ -25,7 +31,6 @@ def register(response):
         form = CustomUserCreatingForm(response.POST)
         if form.is_valid():
             form.save()
-            logger.write_log(form.username, 'added user')
             return redirect('login')
     else:
         form = CustomUserCreatingForm()
@@ -108,4 +113,33 @@ def show_friends(response):
 
 
 def forgot_password(response):
-    return render(response, 'main/forgotPassword.html')
+    if response.method == 'POST':
+        form = RecoveryPasswordForm(response.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            email = form.cleaned_data.get('email')
+            key = ''.join(random.choices(string.ascii_letters + string.digits, k=15))
+            Auth(owner=User.objects.get(username=username), key=key).save()
+            send_mail('Dwitter change password', 'http://localhost:8000/change-password/' + key,
+                      'dwittersite@gmail.com', [email])
+            logger.write_log(username, 'sent email with link to change password')
+            return redirect('login')
+    else:
+        form = RecoveryPasswordForm()
+    return render(response, 'main/forgotPassword.html', {'form': form})
+
+
+def change_password(response, data):
+    if response.method == 'POST':
+        form = ChangePasswordForm(response.POST)
+        if Auth.objects.filter(key=data).exists():
+            if form.is_valid():
+                password = form.cleaned_data.get('password1')
+                user = Auth.objects.get(key=data).owner
+                Auth.objects.filter(key=data).delete()
+                user.password = make_password(password)
+                user.save()
+                return redirect('login')
+    else:
+        form = ChangePasswordForm()
+    return render(response, 'main/changePassword.html', {'form': form})

@@ -10,4 +10,5 @@ urlpatterns = [
     path('add-comment/<int:post_id>/', views.add_comment, name='add-comment'),
     path('show-friends/', views.show_friends, name='show-friends'),
     path('forgot-password/', views.forgot_password, name='forgot-password'),
+    path('change-password/<str:data>/', views.change_password, name='change-password')
 ]

@@ -31,3 +31,8 @@ class Comment(models.Model):
 class Friend(models.Model):
     who = models.ForeignKey(User, on_delete=models.CASCADE, related_name='person')
     whom = models.ForeignKey(User, on_delete=models.CASCADE)
+
+
+class Auth(models.Model):
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    key = models.TextField(unique=True)
