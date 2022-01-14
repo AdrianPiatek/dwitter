@@ -141,5 +141,7 @@ def change_password(response, data):
                 user.save()
                 return redirect('login')
     else:
+        if not Auth.objects.filter(key=data).exists():
+            return redirect('login')
         form = ChangePasswordForm()
     return render(response, 'main/changePassword.html', {'form': form})
